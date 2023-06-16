@@ -20,7 +20,7 @@ export default function TodoContainer() {
   });
 
   const schema = yup.object().shape({
-    title: yup.string().max(10).required(),
+    title: yup.string().max(30).required(),
     description: yup.string().max(100).required(),
   });
   const {
