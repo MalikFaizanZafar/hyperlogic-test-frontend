@@ -2,7 +2,7 @@ import { MdOutlineDelete, MdOutlineEdit } from "react-icons/md";
 
 export default function TodoItem({ todo, handleStatus, deleteTodoMutation, openEditModal }) {
   return (
-    <div className=" flex flex-row items-center justify-center gap-x-3 p-5 hover:bg-[#eaeaea] shadow hover:shadow-lg">
+    <div className="relative flex flex-row items-center justify-center gap-x-3 p-5 hover:bg-[#eaeaea] shadow hover:shadow-lg">
       <label className="checkbox-container">
         <input
           type="checkbox"
@@ -16,7 +16,7 @@ export default function TodoItem({ todo, handleStatus, deleteTodoMutation, openE
         </span>
       </label>
       <h1 className=" text-sm has-tooltip cursor-pointer">
-      <span class='tooltip rounded shadow-lg p-1 bg-gray-100 text-dark-500 -mt-8'>{todo.description}</span>
+      <span className="absolute tooltip rounded shadow-lg p-1 bg-gray-100 text-dark-500 -mt-8">{todo.description}</span>
         {todo.title}</h1>
       {todo.status === "Completed" ? (
         <div className="chip">
