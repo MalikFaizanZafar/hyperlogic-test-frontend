@@ -1,13 +1,85 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+
+
+
+
+
+
+@layer components {
+  .button {
+    @apply bg-blue-500 text-center  border rounded-lg p-4 cursor-pointer mt-3
+  }
+
+  .input {
+    @apply w-full border rounded-md p-3 mt-3
+  }
+
+  .errorText{
+    @apply text-red-400 mt-2
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+.plus-icon {
+  font-size: 24px; /* Increase the font size to adjust the icon size */
+}
+
+.checkbox-container {
+  margin-right: 16px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkmark {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+  position: relative;
+}
+
+.checkbox:checked + .checkmark:before {
+  content: '\2713';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 16px;
+  color: #fff; 
+}
+
+.checkbox:checked + .checkmark {
+  background-color: #00b894; 
+}
+
+
+.chip {
+  display: inline-block;
+  border-radius: 5px;
+  padding: 5px 8px;
+}
+
+.chip-text {
+  display: inline-block;
+  vertical-align: middle;
+  padding: 3px 10px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 10px;
+}
+
+.tooltip {
+  @apply invisible absolute;
+}
+
+.has-tooltip:hover .tooltip {
+  @apply visible z-50;
 }
