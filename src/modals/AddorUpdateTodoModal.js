@@ -41,11 +41,9 @@ export default function AddOrUpdateTodoModal({
               />
               {errors.description && <p className="errorText">{errors.description.message}</p>}
             </div>
-            <div className="button bg-[#06b6d4]">
-              <button type="submit" className=" text-white text-center px-4 whitespace-nowrap">
-                {updateTodo ? "Update Todo" : "Add Todo"}
-              </button>
-            </div>
+            <button type="submit" className="bg-[#06b6d4] text-white text-center button w-full " onClick={handleSubmit(onSubmit)}>
+              <span>{updateTodo ? "Update Todo" : "Add Todo"}</span>
+            </button>
           </form>
         </div>
       </Popup>
